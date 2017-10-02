@@ -2,6 +2,7 @@ import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { AppRoutingModule } from "./app.routing";
 import { AppComponent } from "./app.component";
+import { NativeScriptHttpModule } from "nativescript-angular/http";
 
 import { ItemService } from "./item/item.service";
 import { ItemsComponent } from "./item/items.component";
@@ -12,6 +13,9 @@ import { ItemDetailComponent } from "./item/item-detail.component";
 
 // Uncomment and add to NgModule imports  if you need to use the HTTP wrapper
 // import { NativeScriptHttpModule } from "nativescript-angular/http";
+import { GdesComponent } from "./gdes/gdes.component";
+import { GdesService } from "./gdes/gdes.service";
+import 'rxjs';
 
 @NgModule({
     bootstrap: [
@@ -19,15 +23,18 @@ import { ItemDetailComponent } from "./item/item-detail.component";
     ],
     imports: [
         NativeScriptModule,
+        NativeScriptHttpModule,
         AppRoutingModule
     ],
     declarations: [
         AppComponent,
         ItemsComponent,
-        ItemDetailComponent
+        ItemDetailComponent,
+        GdesComponent
     ],
     providers: [
-        ItemService
+        ItemService,
+        GdesService
     ],
     schemas: [
         NO_ERRORS_SCHEMA

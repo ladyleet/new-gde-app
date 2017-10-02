@@ -1,0 +1,11 @@
+<StackLayout>
+    <SearchBar #searchbar id="searchBar" hint="Search" (submit)="findGde$.next(searchbar.text)" class="search-bar">
+    </SearchBar>
+    <ListView [items]="searchResults$ | async">
+        <ng-template let-gde="item">
+          <StackLayout>
+            <Label [text]="gde.fullname" class="list-group-item"></Label>
+          </StackLayout>
+        </ng-template>
+    </ListView>
+</StackLayout>
